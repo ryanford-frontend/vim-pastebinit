@@ -1,8 +1,8 @@
 -- luacheck: globals vim
 
 local format = string.format
-local buf = vim.buffer()
-local ext = buf.name:match("%.%w+$"):sub(2):lower()
+local name = vim.buffer().fname
+local ext = (name:match("%.%w+$") or ".txt"):sub(2):lower()
 local dictionary = {
      sh = "bash",
       c = "c",
@@ -15,5 +15,5 @@ local dictionary = {
 }
 
 ext = dictionary[ext] or "text"
-os.execute(format("pastebinit -f %s -i %s | xclip -selection primary", ext, buf.fname))
-print("OK")
+local status, err = assert(os.execute(format("pastebinit -f %s -i %s | xclip -selection primary", ext, name)))
+print(status == 0 and "OK" or err)
