@@ -14,6 +14,6 @@ local dictionary = {
      rb = "ruby"
 }
 
-ext = dictionary[ext] or "None"
+ext = dictionary[ext] or "text"
 os.execute(format("pastebinit -f %s -i %s | xclip -selection primary", ext, buf.fname))
 print("OK")
