@@ -8,7 +8,7 @@ Requirements:
 
 * [Xclip](https://launchpad.net/xclip)
 
-* Vim compiled with Lua Interpreter (run `:version` and look for `+lua`)
+* Vim compiled with the Lua interpreter (run `:version` and look for `+lua`)
 
 Usage:
 
