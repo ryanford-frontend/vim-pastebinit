@@ -1,6 +1,6 @@
 ### Vim-Pastebin
 
-#### A Lua Script to Host files via Pastbinit
+#### A Lua script to host files via Pastbinit
 
 Requirements:
 
